@@ -5,239 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WHIEAT Blog</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-}
-
-body {
-  background: #fafafa;
-  color: #222;
-  line-height: 1.6;
-}
-
-/* Header */
-.header {
-  width: 100%;
-  padding: 20px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffffff;
-  border-bottom: 1px solid #eee;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: -1px;
-}
-
-.logo span {
-  color: #4CAF50;
-}
-
-.nav a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.nav .cta {
-  padding: 8px 16px;
-  background: #4CAF50;
-  color: #fff;
-  border-radius: 6px;
-}
-
-/* Hero */
-.hero {
-  height: 70vh;
-  background: linear-gradient(to bottom right, #e8f5e9, #ffffff);
-  display: flex;
-  align-items: center;
-  padding: 0 5%;
-}
-
-.hero-content {
-  max-width: 550px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-}
-
-.btn-primary {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #4CAF50;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* Featured Section */
-.featured {
-  padding: 60px 5%;
-}
-
-.featured h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.card {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  padding-bottom: 20px;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-.card h3 {
-  font-size: 1.3rem;
-  margin: 15px;
-}
-
-.card p {
-  margin: 0 15px 15px;
-  color: #555;
-}
-
-.read-more {
-  margin-left: 15px;
-  text-decoration: none;
-  color: #4CAF50;
-  font-weight: 600;
-}
-
-/* Newsletter */
-.newsletter {
-  padding: 60px 5%;
-  text-align: center;
-  background: #f1f8f4;
-}
-
-.newsletter form {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.newsletter input {
-  padding: 12px;
-  width: 280px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.newsletter button {
-  padding: 12px 20px;
-  background: #4CAF50;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ffffff;
-  border-top: 1px solid #eee;
-  margin-top: 40px;
-}
-  </style>
 </head>
 <body>
 
   <!-- Header -->
   <header class="header">
-    <div class="logo">WHIEAT<span>.</span></div>
+    <div class="logo">WHIEAT<span>Blog</span></div>
     <nav class="nav">
       <a href="#">Home</a>
-      <a href="#">Categories</a>
-      <a href="#">About</a>
+      <a href="#">Insights</a>
+      <a href="#">Guides</a>
       <a href="#" class="cta">Subscribe</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Smart Nutrition. Simple Choices.</h1>
-      <p>Your daily dose of food insights, ingredient breakdowns, and healthy living — powered by WHIEAT.</p>
-      <a href="#" class="btn-primary">Explore Blog</a>
+      <h1>Food Knowledge That Empowers You</h1>
+      <p>Simple explanations. Honest insights. Smarter choices.  
+      WHIEAT brings clarity to the world of ingredients and everyday nutrition.</p>
+      <a href="#" class="btn-primary">Start Reading</a>
     </div>
   </section>
 
   <!-- Featured Posts -->
   <section class="featured">
-    <h2>Featured Articles</h2>
+    <h2>Latest Highlights</h2>
     <div class="grid">
+
       <article class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Blog Image">
-        <h3>Understanding Food Labels the Smart Way</h3>
-        <p>Decode ingredients like a pro using WHIEAT’s intelligent scanning insights.</p>
+        <img src="https://via.placeholder.com/400x250" alt="Food Insight">
+        <h3>What Your Snacks Aren’t Telling You</h3>
+        <p>A closer look at the additives and fillers hiding in common packaged foods.</p>
         <a href="#" class="read-more">Read More →</a>
       </article>
 
       <article class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Blog Image">
-        <h3>Top 10 Healthy Alternatives for Daily Snacks</h3>
-        <p>Swap your cravings with nutritious, delicious options curated by experts.</p>
+        <img src="https://via.placeholder.com/400x250" alt="Healthy Choices">
+        <h3>Small Food Swaps With Big Impact</h3>
+        <p>Easy, practical alternatives that boost your nutrition without sacrificing taste.</p>
         <a href="#" class="read-more">Read More →</a>
       </article>
 
       <article class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Blog Image">
-        <h3>How WHIEAT Helps You Make Better Food Decisions</h3>
-        <p>See how our ingredient analysis empowers mindful eating.</p>
+        <img src="https://via.placeholder.com/400x250" alt="WHIEAT App">
+        <h3>How WHIEAT Helps You Decode Ingredients</h3>
+        <p>See how our smart analysis transforms confusing labels into clear guidance.</p>
         <a href="#" class="read-more">Read More →</a>
       </article>
+
     </div>
   </section>
 
   <!-- Newsletter -->
   <section class="newsletter">
-    <h2>Stay Updated</h2>
-    <p>Get weekly insights, recipes, and nutrition tips straight to your inbox.</p>
+    <h2>Join Our Weekly Digest</h2>
+    <p>Fresh tips, ingredient breakdowns, and food wisdom delivered straight to your inbox.</p>
     <form>
-      <input type="email" placeholder="Enter your email" required />
+      <input type="email" placeholder="Your email address" required />
       <button type="submit">Subscribe</button>
     </form>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2025 WHIEAT. All rights reserved.</p>
+    <p>© 2025 WHIEAT. Crafted for mindful eating.</p>
   </footer>
 
 </body>
