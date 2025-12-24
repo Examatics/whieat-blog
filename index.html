@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WHIEAT Blog – Eat Smarter, One Insight at a Time</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="WHIEAT Blog – your daily dose of food intelligence, ingredient breakdowns, and mindful eating insights." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a href="/" class="logo">
+        <!-- Replace with real logo -->
+        <span class="logo__mark">W</span>
+        <span class="logo__text">WHIEAT</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="/blog" class="nav__link nav__link--active">Blog</a></li>
+          <li class="nav__item"><a href="/how-it-works" class="nav__link">How it works</a></li>
+          <li class="nav__item"><a href="/about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="/community" class="nav__link">Community</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="/app" class="btn btn--small btn--primary">Try WHIEAT</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="hero__label">WHIEAT Blog</span>
+          <h1 class="hero__title">Eat smarter, one insight at a time.</h1>
+          <p class="hero__subtitle">
+            Your daily dose of food intelligence — decoding ingredients, simplifying nutrition, and helping you build mindful eating habits without the guilt.
+          </p>
+          <div class="hero__actions">
+            <a href="#featured" class="btn btn--primary">Explore articles</a>
+            <a href="/how-it-works" class="btn btn--ghost">What is WHIEAT?</a>
+          </div>
+        </div>
+
+        <aside class="hero__featured" aria-label="Featured articles">
+          <article class="mini-card">
+            <span class="chip chip--category">Ingredient intelligence</span>
+            <h2 class="mini-card__title">The hidden truth behind everyday ingredients</h2>
+            <p class="mini-card__meta">7 min read · Ingredient breakdown</p>
+          </article>
+
+          <article class="mini-card">
+            <span class="chip chip--category">Healthy habits</span>
+            <h2 class="mini-card__title">Small daily shifts that change how you eat</h2>
+            <p class="mini-card__meta">5 min read · Habits</p>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Featured Insights -->
+    <section id="featured" class="section section--featured">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Featured insights</h2>
+          <p class="section__subtitle">Start here — essential reads handpicked for you.</p>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="card card--article">
+            <span class="chip chip--category">Ingredient intelligence</span>
+            <h3 class="card__title">
+              The hidden truth behind everyday ingredients
+            </h3>
+            <p class="card__excerpt">
+              Learn how everyday foods affect your energy, focus, and long-term health — without complicated jargon.
+            </p>
+            <p class="card__meta">May 02, 2025 · 7 min read</p>
+          </article>
+
+          <article class="card card--article">
+            <span class="chip chip--category">Smart shopping</span>
+            <h3 class="card__title">
+              Smart grocery shopping: a beginner’s guide
+            </h3>
+            <p class="card__excerpt">
+              A simple framework to walk through any grocery aisle with confidence and intention.
+            </p>
+            <p class="card__meta">April 26, 2025 · 6 min read</p>
+          </article>
+
+          <article class="card card--article">
+            <span class="chip chip--category">Label decoding</span>
+            <h3 class="card__title">
+              Decoding food labels without the overwhelm
+            </h3>
+            <p class="card__excerpt">
+              Learn to read labels in seconds and focus only on what truly matters for your goals.
+            </p>
+            <p class="card__meta">April 18, 2025 · 8 min read</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Strip -->
+    <section class="section section--categories">
+      <div class="container categories">
+        <div class="categories__label">Browse by focus</div>
+        <div class="categories__chips" role="tablist" aria-label="Article categories">
+          <button class="chip chip--filter chip--filter-active" role="tab">All</button>
+          <button class="chip chip--filter" role="tab">Ingredient intelligence</button>
+          <button class="chip chip--filter" role="tab">Healthy habits</button>
+          <button class="chip chip--filter" role="tab">Smart shopping</button>
+          <button class="chip chip--filter" role="tab">Recipes &amp; ideas</button>
+          <button class="chip chip--filter" role="tab">WHIEAT updates</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Feed -->
+    <section class="section section--feed">
+      <div class="container">
+        <header class="section__header section__header--feed">
+          <div>
+            <h2 class="section__title">All articles</h2>
+            <p class="section__subtitle">Deep dives, quick wins, and real stories to support how you eat every day.</p>
+          </div>
+          <div class="section__controls">
+            <label for="sort" class="sort__label">Sort by</label>
+            <select id="sort" class="sort__select">
+              <option value="newest">Newest</option>
+              <option value="popular">Most popular</option>
+            </select>
+          </div>
+        </header>
+
+        <div class="grid grid--2 grid--feed">
+          <!-- Article Card 1 -->
+          <article class="card card--article card--feed">
+            <div class="card__thumb" aria-hidden="true"></div>
+            <div class="card__body">
+              <span class="chip chip--category">Healthy habits</span>
+              <h3 class="card__title">
+                Building a plate that keeps you full and focused
+              </h3>
+              <p class="card__excerpt">
+                A simple way to think about balance — so your meals support your day instead of slowing you down.
+              </p>
+              <div class="card__meta-row">
+                <p class="card__meta">May 12, 2025 · 9 min read</p>
+                <ul class="card__tags">
+                  <li>Satiety</li>
+                  <li>Energy</li>
+                  <li>Macros</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article Card 2 -->
+          <article class="card card--article card--feed">
+            <div class="card__thumb" aria-hidden="true"></div>
+            <div class="card__body">
+              <span class="chip chip--category">Ingredient intelligence</span>
+              <h3 class="card__title">
+                Sugar, sweetness, and what your labels don’t say
+              </h3>
+              <p class="card__excerpt">
+                From hidden sugars to everyday swaps — understand what you’re really having when something tastes “just a bit sweet”.
+              </p>
+              <div class="card__meta-row">
+                <p class="card__meta">May 06, 2025 · 10 min read</p>
+                <ul class="card__tags">
+                  <li>Blood sugar</li>
+                  <li>Cravings</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article Card 3 -->
+          <article class="card card--article card--feed">
+            <div class="card__thumb" aria-hidden="true"></div>
+            <div class="card__body">
+              <span class="chip chip--category">Smart shopping</span>
+              <h3 class="card__title">
+                A calm grocery list for busy weeks
+              </h3>
+              <p class="card__excerpt">
+                How to create a repeatable list that fits your budget, time, and health goals.
+              </p>
+              <div class="card__meta-row">
+                <p class="card__meta">April 30, 2025 · 6 min read</p>
+                <ul class="card__tags">
+                  <li>Planning</li>
+                  <li>Budget</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article Card 4 -->
+          <article class="card card--article card--feed">
+            <div class="card__thumb" aria-hidden="true"></div>
+            <div class="card__body">
+              <span class="chip chip--category">Stories</span>
+              <h3 class="card__title">
+                “I didn’t change everything, just what I could see”
+              </h3>
+              <p class="card__excerpt">
+                Real stories from people using WHIEAT to make small, sustainable changes that add up.
+              </p>
+              <div class="card__meta-row">
+                <p class="card__meta">April 22, 2025 · 5 min read</p>
+                <ul class="card__tags">
+                  <li>Community</li>
+                  <li>Mindset</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__footer section__footer--feed">
+          <button class="btn btn--ghost">Load more articles</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section section--newsletter">
+      <div class="container newsletter">
+        <div class="newsletter__content">
+          <h2 class="section__title">Stay ahead of your plate</h2>
+          <p class="section__subtitle">
+            Get weekly food breakdowns, ingredient deep dives, and gentle nudges to help you eat with more clarity and confidence.
+          </p>
+        </div>
+        <form class="newsletter__form">
+          <label for="email" class="sr-only">Email address</label>
+          <input
+            type="email"
+            id="email"
+            class="input input--email"
+            placeholder="Enter your email"
+            required
+          />
+          <button type="submit" class="btn btn--primary">Get weekly insights</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Community highlight -->
+    <section class="section section--community">
+      <div class="container community">
+        <div class="community__intro">
+          <h2 class="section__title">Built for real people, not perfection</h2>
+          <p class="section__subtitle">
+            WHIEAT is for everyday lives, not ideal ones. Learn alongside a community that’s choosing clarity over extremes and progress over perfection.
+          </p>
+          <a href="/community" class="link">See how WHIEAT works</a>
+        </div>
+
+        <div class="community__stories">
+          <article class="story-card">
+            <div class="story-card__avatar">A</div>
+            <div>
+              <p class="story-card__quote">
+                “Once I could see what my usual snacks were made of, changing them felt obvious, not extreme.”
+              </p>
+              <p class="story-card__meta">Energy · Evening snacking</p>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <div class="story-card__avatar">M</div>
+            <div>
+              <p class="story-card__quote">
+                “WHIEAT helped me have better conversations at home about food without blame.”
+              </p>
+              <p class="story-card__meta">Family · Mindset</p>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <div class="story-card__avatar">R</div>
+            <div>
+              <p class="story-card__quote">
+                “The ingredient breakdowns made me rethink just three items — and that was enough to feel different.”
+              </p>
+              <p class="story-card__meta">Clarity · Small changes</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <div class="logo logo--footer">
+          <span class="logo__mark">W</span>
+          <span class="logo__text">WHIEAT</span>
+        </div>
+        <p class="footer__text">
+          WHIEAT helps you see what’s really on your plate — so every
