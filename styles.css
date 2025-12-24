@@ -1,0 +1,168 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #f9faf9;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  padding: 20px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #4CAF50;
+  margin-left: 4px;
+}
+
+.nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav .cta {
+  padding: 8px 16px;
+  background: #4CAF50;
+  color: #fff;
+  border-radius: 6px;
+}
+
+/* Hero */
+.hero {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 0 6%;
+  background: linear-gradient(to bottom right, #eaf7ec, #ffffff);
+}
+
+.hero-content {
+  max-width: 550px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  margin-bottom: 25px;
+  color: #444;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #4CAF50;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Featured */
+.featured {
+  padding: 60px 6%;
+}
+
+.featured h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 35px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding-bottom: 20px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  margin: 15px;
+  font-size: 1.3rem;
+}
+
+.card p {
+  margin: 0 15px 15px;
+  color: #555;
+}
+
+.read-more {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+/* Newsletter */
+.newsletter {
+  padding: 60px 6%;
+  text-align: center;
+  background: #f2f8f3;
+}
+
+.newsletter form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 12px;
+  width: 280px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.newsletter button {
+  padding: 12px 20px;
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 40px;
+}
