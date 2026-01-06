@@ -28,23 +28,54 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll \
         jekyll/builder:latest /bin/bash -c "cd /srv/jekyll && npm install bootstrap"
-    - name: Install correct Bundler version
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll \
-        jekyll/builder:latest /bin/bash -c "gem install bundler && bundle install"
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
-    - name: Fix permissions for Gemfile.lock
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll \
-        jekyll/builder:latest /bin/bash -c "chmod 666 /srv/jekyll/Gemfile.lock"
-    - name: Install Bootstrap
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll \
-        jekyll/builder:latest /bin/bash -c "cd /srv/jekyll && npm install bootstrap"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clean _site folder
+        run: |
+          docker run \
+          -v ${{ github.workspace }}:/srv/jekyll \
+          jekyll/builder:latest /bin/bash -c "rm -rf /srv/jekyll/_site"
+      - name: Fix permissions for Gemfile.lock
+        run: |
+          docker run \
+          -v ${{ github.workspace }}:/srv/jekyll \
+          jekyll/builder:latest /bin/bash -c "chmod 666 /srv/jekyll/Gemfile.lock"
+      - name: Install Bootstrap
+        run: |
+          docker run \
+          -v ${{ github.workspace }}:/srv/jekyll \
+          jekyll/builder:latest /bin/bash -c "cd /srv/jekyll && npm install bootstrap"
+      - name: Install correct Bundler version
+        run: |
+          docker run \
+          -v ${{ github.workspace }}:/srv/jekyll \
+          jekyll/builder:latest /bin/bash -c "gem install bundler && bundle install"
+      - name: Build the site in the jekyll/builder container
+        run: |
+          docker run \
+          -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+      - name: Upload _site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: _site
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download build output
+        uses: actions/download-artifact@v4
+        with:
+          name: _site
+          path: _site
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
