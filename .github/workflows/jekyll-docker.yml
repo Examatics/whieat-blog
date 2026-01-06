@@ -13,6 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Clean _site folder
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll \
+        jekyll/builder:latest /bin/bash -c "rm -rf /srv/jekyll/_site"
     - name: Fix permissions for Gemfile.lock
       run: |
         docker run \
