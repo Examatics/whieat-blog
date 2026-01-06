@@ -13,6 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Fix permissions for Gemfile.lock
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll \
+        jekyll/builder:latest /bin/bash -c "chmod 666 /srv/jekyll/Gemfile.lock"
     - name: Install correct Bundler version
       run: |
         docker run \
