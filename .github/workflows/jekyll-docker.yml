@@ -13,6 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Install correct Bundler version
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll \
+        jekyll/builder:latest /bin/bash -c "gem install bundler && bundle install"
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
