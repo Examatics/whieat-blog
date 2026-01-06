@@ -1,3 +1,27 @@
+# Node modules
+node_modules/
+
+# Jekyll build output
+_site/
+
+# Sass cache
+.sass-cache/
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Misc
+*.swp
+*.bak
+*.tmp
 _site
 .sass-cache
 .jekyll-cache

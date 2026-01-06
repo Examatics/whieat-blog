@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,60 @@
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
-  <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines }}">
+  <meta property="og:description"
+    content="{{ page.excerpt | default: site.description | strip_html | strip_newlines }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:site_name" content="{{ site.title }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.title }} | {{ site.title }}">
-  <meta name="twitter:description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines }}">
+  <meta name="twitter:description"
+    content="{{ page.excerpt | default: site.description | strip_html | strip_newlines }}">
   <meta name="twitter:site" content="@{{ site.twitter_username }}">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoA6VZgQGA6h9gZ9E2l6pHnE6E1z9jE6x0xIM+B07jRMXj9" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/main.css">
 </head>
+
 <body>
-  <header>
-    <div class="logo">WHIEAT<span>Blog</span></div>
-    <nav>
-      <a href="https://whieat.com">Home</a> |
-      <a href="/">Blog</a>
+<header class="border-bottom">
+    <nav class="navbar navbar-light bg-white py-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="app-logo d-flex align-items-center">
+          <img src="/assets/icons/favicon.ico" alt="WHIEAT Logo" class="logo-image me-2" style="height: 2.2rem;">
+          <div class="logo-text">
+            <div class="logo-title fw-bold" style="font-size:1.5rem;">WHIEAT</div>
+            <span class="logo-tagline text-muted" style="font-size:0.95rem;">Eat Wise, Live Well</span>
+          </div>
+        </div>
+        <div>
+          <a class="nav-link d-inline px-2" href="https://whieat.com">Home</a>
+          <a class="nav-link d-inline px-2" href="/">Blog</a>
+        </div>
+      </div>
     </nav>
   </header>
-  <main>
+<section class="hero text-center py-5 mb-5 bg-light rounded shadow-sm">
+	<div class="container">
+		<!-- <div class="app-logo d-flex flex-column align-items-center mb-3">
+			<img src="/assets/icons/favicon.ico" alt="WHIEAT Logo" class="logo-image mb-2">
+			<div class="logo-title fw-bold" style="font-size:2rem;">WHIEAT</div>
+			<span class="logo-tagline text-muted" style="font-size:1rem;">Eat Wise, Live Well</span>
+		</div> -->
+		<h1 class="display-5 fw-light mb-3">Unlock the Secrets of What You Eat</h1>
+		<p class="lead mb-4">Welcome to Whieat Blog, your trusted guide to nutrition, food science, and healthy living. Discover expert tips, in-depth articles, and practical advice to help you make smarter food choices every day.</p>
+		<a href="#" class="btn btn-primary btn-lg">Start Exploring</a>
+	</div>
+</section>
+  <main class="container my-5">
     {{ content }}
   </main>
-  <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+  <footer class="bg-light text-center py-4 mt-5 border-top">
+    <div class="container">
+      <small class="text-muted">&copy; {{ site.time | date: '%Y' }} {{ site.title }}</small>
+    </div>
   </footer>
 </body>
+
 </html>

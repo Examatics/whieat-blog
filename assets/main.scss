@@ -1,0 +1,18 @@
+---
+---
+@import "bootstrap";
+@import "main";
+.logo-image, .logo-icon {
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo-title {
+  font-weight: 600;
+  margin: 0;
+}
+
+.logo-tagline {
+  color: var(--ion-color-medium);
+  font-weight: 400;
+}

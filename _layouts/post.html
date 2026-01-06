@@ -1,42 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} | {{ site.title }}</title>
+  <title>{{ page.title }} | {{ site.title }}</title> <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoA6VZgQGA6h9gZ9E2l6pHnE6E1z9jE6x0xIM+B07jRMXj9" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/main.css">
 </head>
+
 <body>
-  <header>
-    <div class="logo"><span>WHIEAT</span></div>
-    <nav>
-      <a href="https://whieat.com">Home</a> |
-      <a href="/">Blog</a>
+  <header class="border-bottom mb-4">
+    <nav class="navbar navbar-light bg-white py-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="app-logo d-flex align-items-center">
+          <img src="/assets/icons/favicon.ico" alt="WHIEAT Logo" class="logo-image me-2" style="height: 2.2rem;">
+          <div class="logo-text">
+            <div class="logo-title fw-bold" style="font-size:1.5rem;">WHIEAT</div>
+            <span class="logo-tagline text-muted" style="font-size:0.95rem;">Eat Wise, Live Well</span>
+          </div>
+        </div>
+        <div>
+          <a class="nav-link d-inline px-2" href="https://whieat.com">Home</a>
+          <a class="nav-link d-inline px-2" href="/">Blog</a>
+        </div>
+      </div>
     </nav>
   </header>
-  <main>
-    <article class="blog-post">
-      <h1 class="post-title">{{ page.title }}</h1>
-      <div class="post-meta">
-        <span>{{ page.date | date: "%B %d, %Y" }}</span>
-        {% if page.author %} | <span>By {{ page.author }}</span>{% endif %}
-        {% if page.tags %} | <span>Tags: {{ page.tags | join: ', ' }}</span>{% endif %}
+  <main class="container my-5">
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <article class="blog-post bg-white rounded shadow-sm p-4 mb-4">
+          <h1 class="post-title display-4 fw-light mb-3">{{ page.title }}</h1>
+          <div class="post-meta text-muted mb-4">
+            <span>{{ page.date | date: "%B %d, %Y" }}</span>
+            {% if page.author %} | <span>By {{ page.author }}</span>{% endif %}
+            {% if page.tags %} | <span>Tags: {{ page.tags | join: ', ' }}</span>{% endif %}
+          </div>
+          <div class="post-content">
+            {{ content }}
+          </div>
+          <div class="post-nav d-flex justify-content-between mt-5 pt-4 border-top">
+            {% if page.previous %}
+            <a class="btn btn-outline-primary" href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>
+            {% else %}
+            <span></span>
+            {% endif %}
+            {% if page.next %}
+            <a class="btn btn-outline-primary" href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>
+            {% endif %}
+          </div>
+        </article>
       </div>
-      <div class="post-content">
-        {{ content }}
-      </div>
-      <div class="post-nav">
-        {% if page.previous %}
-          <a class="prev-post" href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>
-        {% endif %}
-        {% if page.next %}
-          <a class="next-post" href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>
-        {% endif %}
-      </div>
-    </article>
+      <aside class="col-lg-4 col-md-12">
+        <div class="bg-white rounded shadow-sm p-3 mb-4">
+          <h5 class="mb-3">Recent Posts</h5>
+          <ul class="list-unstyled recent-posts">
+            {% assign recent_posts = site.posts | where_exp: "post", "post.url != page.url" | limit:10 %}
+            {% for post in recent_posts %}
+              <li class="mb-2">
+                <a href="{{ post.url }}" class="text-decoration-none">{{ post.title }}</a>
+                <div class="text-muted small">{{ post.date | date: "%b %d, %Y" }}</div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </aside>
+    </div>
   </main>
-  <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+  <footer class="bg-light text-center py-4 mt-5 border-top">
+    <div class="container">
+      <small class="text-muted">&copy; {{ site.time | date: '%Y' }} {{ site.title }}</small>
+    </div>
   </footer>
 </body>
+
 </html>
