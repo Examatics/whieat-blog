@@ -33,3 +33,8 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll \
         jekyll/builder:latest /bin/bash -c "chmod 666 /srv/jekyll/Gemfile.lock"
+    - name: Install Bootstrap
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll \
+        jekyll/builder:latest /bin/bash -c "cd /srv/jekyll && npm install bootstrap"
